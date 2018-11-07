@@ -55,6 +55,7 @@
 
   <!-- Barra de Navegação (No topo) -->
   <div class="w3-top ">
+
     <div class="w3-bar" id="myNavbar">
       <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
         <i class="fa fa-bars"></i>
@@ -64,7 +65,6 @@
       <a href="#about" class="w3-bar-item w3-button w3-hide-small"> Sobre nós</a>
       <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"> Materiais</a>
       <a href="#contact" class="w3-bar-item w3-button w3-hide-small"> Contato</a>
-    </b>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
         <i class="fa fa-search"></i>
       </a>
@@ -72,10 +72,10 @@
 
     <!-- Barra de Navegação em telas pequenas -->
     <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-      <a href="#about" class="w3-bar-item w3-button w3-text-white" onclick="toggleFunction()">Sobre nós</a>
-      <a href="#portfolio" class="w3-bar-item w3-button w3-text-white" onclick="toggleFunction()">Materiais</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-text-white" onclick="toggleFunction()">Contato</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-white">Pesquise</a>
+      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">Sobre nós</a>
+      <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">Materiais</a>
+      <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">Contato</a>
+      <a href="#" class="w3-bar-item w3-button">Pesquise</a>
     </div>
   </div>
 
@@ -287,48 +287,37 @@
   </footer>
    
   <!-- Add Google Maps -->
-  <script>
-   $(document).ready(function(){
-     myMap()
-   });
-    
-  function myMap() {
-    var mapProp= {
-        center:new google.maps.LatLng(-21.782890, -43.336258),
-        zoom:15,
-    };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-  }
 
-  // Modal Image Gallery
-  function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
 
-  // Change style of navbar on scroll
-  window.onscroll = function() {myFunction()};
-  function myFunction() {
-      var navbar = document.getElementById("myNavbar");
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-          navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-      } else {
-          navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-      }
-  }
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
 
-  // Used to toggle the menu on small screens when clicking on the menu button
-  function toggleFunction() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-      } else {
-          x.className = x.className.replace(" w3-show", "");
-      }
-  }
-  </script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
   <!--
   To use this code on your website, get a free API key from Google.
